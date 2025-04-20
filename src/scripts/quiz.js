@@ -69,3 +69,9 @@ function saveUserScore(email, quizId, score) {
 
   localStorage.setItem('users', JSON.stringify(users));
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const submitBtn = document.getElementById('submitBtn');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', submitQuiz);
+  }
+});

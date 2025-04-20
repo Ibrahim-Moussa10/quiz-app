@@ -8,12 +8,12 @@
   <body>
     <div class="tab-container">
       <div class="tabs">
-        <div class="tab active" onclick="switchTab('login', event)">Login</div>
-        <div class="tab" onclick="switchTab('register', event)">Register</div>
+        <div class="tab active" id="loginTab">Login</div>
+        <div class="tab" id="registerTab">Register</div>
       </div>
 
       <div id="login" class="form-container active">
-        <form onsubmit="handleLogin(event)">
+        <form id="loginForm">
           <input type="email" id="loginEmail" placeholder="Email" required />
           <input
             type="password"
@@ -27,7 +27,7 @@
       </div>
 
       <div id="register" class="form-container">
-        <form onsubmit="handleRegister(event)">
+        <form id="registerForm">
           <input
             type="text"
             id="registerUsername"

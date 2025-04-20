@@ -1,3 +1,32 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const loginTab = document.getElementById('loginTab');
+  const registerTab = document.getElementById('registerTab');
+
+  loginTab.addEventListener('click', (event) => {
+    switchTab('login', event);
+  });
+
+  registerTab.addEventListener('click', (event) => {
+    switchTab('register', event);
+  });
+
+  const loginForm = document.getElementById('loginForm');
+  const registerForm = document.getElementById('registerForm');
+
+  loginForm.addEventListener('submit', (event) => {
+    handleLogin(event);
+  });
+
+  registerForm.addEventListener('submit', (event) => {
+    handleRegister(event);
+  });
+
+  const loggedInEmail = localStorage.getItem('loggedInUser');
+  const users = JSON.parse(localStorage.getItem('users') || '[]');
+  if (loggedInEmail && users.find((user) => user.email === loggedInEmail)) {
+    alert(`You are logged in as ${loggedInEmail}`);
+  }
+});
 function switchTab(tabId, event) {
   document
     .querySelectorAll('.tab')

@@ -31,7 +31,7 @@ if (quizzes.length === 0) {
   });
 }
 
-function logout() {
+document.getElementById('logoutBtn').addEventListener('click', () => {
   localStorage.removeItem('loggedInUser');
   window.location.href = '../index.html';
-}
+});
