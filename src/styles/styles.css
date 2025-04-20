@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  background: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tab-container {
+  width: 300px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  cursor: pointer;
+  background: rgb(247, 246, 246);
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.tab.active {
+  background: white;
+  font-weight: bold;
+}
+
+.form-container {
+  padding: 20px;
+  display: none;
+}
+
+.form-container.active {
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(98, 98, 167);
+}
+
+.message {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
