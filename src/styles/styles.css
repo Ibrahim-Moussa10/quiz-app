@@ -8,11 +8,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
 }
 
 .tab-container {
-  width: 300px;
+  width: 100%;
+  max-width: 400px;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
@@ -60,6 +63,7 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  font-size: 16px;
 }
 
 button:hover {
@@ -79,26 +83,32 @@ button:hover {
 .error {
   color: red;
 }
+
 .question-block {
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid red;
   border-radius: 10px;
 }
+
 label {
-  margin-left: 20px;
+  display: block;
+  margin: 8px 0;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
   border: 1px solid #ccc;
 }
+
 th,
 td {
   padding: 10px;
   text-align: left;
   border: 1px solid #ddd;
+  font-size: 14px;
 }
 
 th {
@@ -112,4 +122,21 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #f1f1f1;
+}
+
+@media (max-width: 500px) {
+  .tab-container {
+    width: 100%;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 14px;
+  }
 }
