@@ -46,6 +46,9 @@ function submitQuiz() {
 
   resultDiv.innerHTML = `<h3>You scored ${score} out of ${quiz.questions.length}</h3>`;
   saveUserScore(loggedInEmail, quiz.id, score);
+  setTimeout(() => {
+    window.location.href = 'home.html';
+  }, 500);
 }
 
 function saveUserScore(email, quizId, score) {
