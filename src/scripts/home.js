@@ -13,7 +13,7 @@ if (!isAdmin) {
   username = user?.username || loggedInEmail;
 }
 
-document.getElementById('welcomeMessage').textContent = `Welcome!, ${username}`;
+document.getElementById('welcomeMessage').innerHTML = `Welcome! ${username.charAt(0).toUpperCase() + username.slice(1)}`;
 
 const quizzes = JSON.parse(localStorage.getItem('quizzes') || '[]');
 const quizList = document.getElementById('quizList');
