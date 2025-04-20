@@ -1,1 +1,55 @@
+function switchTab(tabId) {
+  document
+    .querySelectorAll('.tab')
+    .forEach((tab) => tab.classList.remove('active'));
+  document
+    .querySelectorAll('.form-container')
+    .forEach((form) => form.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  event.target.classList.add('active');
+}
 
+function handleRegister(event) {
+  event.preventDefault();
+  const username = document.getElementById('registerUsername').value;
+  const email = document.getElementById('registerEmail').value;
+  const password = document.getElementById('registerPassword').value;
+
+  const users = JSON.parse(localStorage.getItem('users') || '{}');
+
+  if (users[email]) {
+    showMessage('registerMessage', 'Email already registered.', 'error');
+    return;
+  }
+
+  users[email] = { username, password };
+  localStorage.setItem('users', JSON.stringify(users));
+  showMessage('registerMessage', 'Registration successful!', 'success');
+  event.target.reset();
+}
+
+function handleLogin(event) {
+  event.preventDefault();
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+
+  const users = JSON.parse(localStorage.getItem('users') || '{}');
+
+  if (users[email] && users[email].password === password) {
+    showMessage(
+      'loginMessage',
+      `Welcome back, ${users[email].username}!`,
+      'success'
+    );
+  } else {
+    showMessage('loginMessage', 'Invalid email or password.', 'error');
+  }
+
+  event.target.reset();
+}
+
+function showMessage(id, text, type) {
+  const messageDiv = document.getElementById(id);
+  messageDiv.textContent = text;
+  messageDiv.className = `message ${type}`;
+}
