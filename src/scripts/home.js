@@ -6,9 +6,12 @@ if (!loggedInEmail) {
 }
 
 const isAdmin = loggedInEmail === 'admin@quiz.com';
-const username = isAdmin
-  ? 'Admin'
-  : users[loggedInEmail]?.username || loggedInEmail;
+let username = 'Admin';
+
+if (!isAdmin) {
+  const user = users.find((u) => u.email === loggedInEmail);
+  username = user?.username || loggedInEmail;
+}
 
 document.getElementById('welcomeMessage').textContent = `Welcome!, ${username}`;
 
