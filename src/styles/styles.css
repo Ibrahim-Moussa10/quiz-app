@@ -1,10 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-image: radial-gradient(
-    circle,
-    rgb(255, 0, 111) 0%,
-    rgb(101, 157, 221) 100%
-  );
+  background-color: whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +56,10 @@ button {
   width: 100%;
   margin-top: 30px;
   padding: 10px;
-  background: blue;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  background: rgb(114, 114, 153);
   color: white;
   border: none;
   cursor: pointer;
@@ -88,9 +87,10 @@ button:hover {
 .question-block {
   margin-bottom: 20px;
   padding: 10px;
-  border: 1px solid rgb(100, 100, 255);
+  border: 1px solid rgba(0, 0, 0, 0.527);
   border-radius: 10px;
-  background-color: rgb(77, 255, 255);
+  background-color: rgb(255, 232, 232);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .answer-label{
