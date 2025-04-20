@@ -75,3 +75,12 @@ button:hover {
 .error {
   color: red;
 }
+.question-block {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 10px;
+}
+label {
+  margin-left: 20px;
+}
