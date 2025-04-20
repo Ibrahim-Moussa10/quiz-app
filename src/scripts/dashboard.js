@@ -3,8 +3,7 @@ if (loggedInEmail !== 'admin@quiz.com') {
   window.location.href = 'index.html';
 }
 
-const users = JSON.parse(localStorage.getItem('users') || '{}');
-const userScores = JSON.parse(localStorage.getItem('userScores') || '{}');
+const users = JSON.parse(localStorage.getItem('users') || '[]');
 const quizzes = JSON.parse(localStorage.getItem('quizzes') || '[]');
 
 const container = document.getElementById('userTableContainer');
@@ -25,10 +24,10 @@ table.appendChild(thead);
 
 const tbody = document.createElement('tbody');
 
-Object.entries(users).forEach(([email, user]) => {
+users.forEach((user) => {
   const row = document.createElement('tr');
   const tdEmail = document.createElement('td');
-  tdEmail.textContent = email;
+  tdEmail.textContent = user.email;
   const tdUsername = document.createElement('td');
   tdUsername.textContent = user.username || '-';
 
@@ -37,7 +36,7 @@ Object.entries(users).forEach(([email, user]) => {
 
   quizzes.forEach((q) => {
     const tdScore = document.createElement('td');
-    const score = userScores[email]?.[q.id];
+    const score = user.scores[q.id];
     tdScore.textContent = score !== undefined ? score : '–';
     row.appendChild(tdScore);
   });

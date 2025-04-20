@@ -30,21 +30,39 @@ function displayQuiz(quiz) {
 function submitQuiz() {
   const resultDiv = document.getElementById('result');
   let score = 0;
+
+  const loggedInEmail = localStorage.getItem('loggedInUser');
+  if (!loggedInEmail) {
+    alert('You need to be logged in to submit the quiz!');
+    return;
+  }
+
   quiz.questions.forEach((q, index) => {
     const selected = document.querySelector(`input[name="q${index}"]:checked`);
     if (selected && parseInt(selected.value) === q.correctAnswer) {
       score++;
     }
   });
+
   resultDiv.innerHTML = `<h3>You scored ${score} out of ${quiz.questions.length}</h3>`;
   saveUserScore(loggedInEmail, quiz.id, score);
 }
 
 function saveUserScore(email, quizId, score) {
-  let userScores = JSON.parse(localStorage.getItem('userScores') || '{}');
-  if (!userScores[email]) {
-    userScores[email] = {};
+  let users = JSON.parse(localStorage.getItem('users') || '[]');
+  const user = users.find((user) => user.email === email);
+
+  if (user) {
+    user.scores[quizId] = score;
+  } else {
+    const newUser = {
+      email: email,
+      username: email,
+      password: '',
+      scores: { [quizId]: score },
+    };
+    users.push(newUser);
   }
-  userScores[email][quizId] = score;
-  localStorage.setItem('userScores', JSON.stringify(userScores));
+
+  localStorage.setItem('users', JSON.stringify(users));
 }
