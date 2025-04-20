@@ -30,7 +30,8 @@ function handleRegister(event) {
 
 function handleLogin(event) {
   event.preventDefault();
-  const email = document.getElementById('loginEmail').value;
+
+  const email = document.getElementById('loginEmail').value.trim();
   const password = document.getElementById('loginPassword').value;
 
   const users = JSON.parse(localStorage.getItem('users') || '{}');
@@ -41,6 +42,7 @@ function handleLogin(event) {
       `Welcome back, ${users[email].username}!`,
       'success'
     );
+    localStorage.setItem('loggedInUser', email);
   } else {
     showMessage('loginMessage', 'Invalid email or password.', 'error');
   }
@@ -53,3 +55,10 @@ function showMessage(id, text, type) {
   messageDiv.textContent = text;
   messageDiv.className = `message ${type}`;
 }
+window.addEventListener('DOMContentLoaded', () => {
+  const loggedInEmail = localStorage.getItem('loggedInUser');
+  const users = JSON.parse(localStorage.getItem('users') || '{}');
+  if (loggedInEmail && users[loggedInEmail]) {
+    alert(`You are logged in as ${users[loggedInEmail].username}`);
+  }
+});
