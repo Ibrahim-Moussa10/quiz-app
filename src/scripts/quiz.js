@@ -48,7 +48,7 @@ function submitQuiz() {
   saveUserScore(loggedInEmail, quiz.id, score);
   setTimeout(() => {
     window.location.href = 'home.html';
-  }, 500);
+  }, 5000);
 }
 
 function saveUserScore(email, quizId, score) {
