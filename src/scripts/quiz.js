@@ -30,7 +30,6 @@ function displayQuiz(quiz) {
 }
 
 function submitQuiz() {
-  const resultDiv = document.getElementById('result');
   let score = 0;
 
   const loggedInEmail = localStorage.getItem('loggedInUser');
@@ -46,11 +45,10 @@ function submitQuiz() {
     }
   });
 
-  resultDiv.innerHTML = `<h3>You scored ${score} out of ${quiz.questions.length}</h3>`;
+  showResultAlert(`You scored ${score} out of ${quiz.questions.length}`)
+
   saveUserScore(loggedInEmail, quiz.id, score);
-  setTimeout(() => {
-    window.location.href = 'home.html';
-  }, 5000);
+
 }
 
 function saveUserScore(email, quizId, score) {
@@ -77,3 +75,16 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.addEventListener('click', submitQuiz);
   }
 });
+
+
+function showResultAlert(msg) {
+  const resultDiv = document.getElementById('result');
+  resultDiv.children[0].children[0].innerHTML = msg;
+  resultDiv.classList.toggle('show');
+}
+
+document.getElementById('homeBtn').addEventListener('click', () => {
+  window.location.href = 'home.html';
+  const resultDiv = document.getElementById('result');
+  resultDiv.classList.toggle('show');
+} );
