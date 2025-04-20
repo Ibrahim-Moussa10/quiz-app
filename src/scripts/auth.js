@@ -34,6 +34,15 @@ function handleLogin(event) {
   const email = document.getElementById('loginEmail').value.trim();
   const password = document.getElementById('loginPassword').value;
 
+  const adminEmail = 'admin@quiz.com';
+  const adminPassword = 'admin123';
+
+  if (email === adminEmail && password === adminPassword) {
+    localStorage.setItem('loggedInUser', email);
+    window.location.href = 'dashboard.html';
+    return;
+  }
+
   const users = JSON.parse(localStorage.getItem('users') || '{}');
 
   if (users[email] && users[email].password === password) {
