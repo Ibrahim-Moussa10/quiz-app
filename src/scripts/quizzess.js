@@ -6,21 +6,21 @@ const quizzes = [
       {
         question: 'What does HTML stand for?',
         answers: [
-          'HyperText Markup Language',
-          'HighText Machine Language',
-          'Hyperlink and Text Markup Language',
+          'a. HyperText Markup Language',
+          'b. HighText Machine Language',
+          'c. Hyperlink and Text Markup Language',
         ],
         correctAnswer: 0,
       },
       {
         question:
           'Which element is responsible for the content structure of a web page?',
-        answers: ['HTML', 'CSS', 'JavaScript'],
+        answers: ['a. HTML', 'b. CSS', 'c. JavaScript'],
         correctAnswer: 0,
       },
       {
         question: 'Which of the following is used to add images in a webpage?',
-        answers: ['Image source', 'HTML image', 'Image element'],
+        answers: ['a. Image source', 'b. HTML image', 'c. Image element'],
         correctAnswer: 2,
       },
     ],
@@ -31,20 +31,20 @@ const quizzes = [
     questions: [
       {
         question: 'Which property is used to change text color?',
-        answers: ['color', 'font-color', 'text-color'],
+        answers: ['a. color', 'b. font-color', 'c. text-color'],
         correctAnswer: 0,
       },
       {
         question: 'Which symbol is used for an ID selector?',
-        answers: ['#', '.', '*'],
+        answers: ['a. #', 'b. .', 'c. *'],
         correctAnswer: 0,
       },
       {
         question: 'What does CSS stand for?',
         answers: [
-          'Cascading Style Sheets',
-          'Creative Style Syntax',
-          'Colorful Style Sheets',
+          'a. Cascading Style Sheets',
+          'b. Creative Style Syntax',
+          'c. Colorful Style Sheets',
         ],
         correctAnswer: 0,
       },
@@ -56,17 +56,17 @@ const quizzes = [
     questions: [
       {
         question: 'Which symbol is used for comments in JavaScript?',
-        answers: ['//', '##', '--'],
+        answers: ['a. //', 'b. ##', 'c. --'],
         correctAnswer: 0,
       },
       {
         question: 'What is the result of 3 + "3" in JavaScript?',
-        answers: ['33', '6', 'Error'],
+        answers: ['a. 33', 'b. 6', 'c. Error'],
         correctAnswer: 0,
       },
       {
         question: 'Which method parses a JSON string into an object?',
-        answers: ['JSON.parse()', 'JSON.stringify()', 'JSON.convert()'],
+        answers: ['a. JSON.parse()', 'b. JSON.stringify()', 'c. JSON.convert()'],
         correctAnswer: 0,
       },
     ],

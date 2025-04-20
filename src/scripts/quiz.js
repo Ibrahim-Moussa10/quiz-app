@@ -20,7 +20,9 @@ function displayQuiz(quiz) {
     div.appendChild(questionEl);
     q.answers.forEach((answer, i) => {
       const label = document.createElement('label');
-      label.innerHTML = `<input type="radio" name="q${index}" value="${i}"> ${answer}`;
+      label.classList.add('answer-label');
+      label.innerHTML = `<div>${answer}</div> 
+                        <input type="radio" name="q${index}" value="${i}"> `;
       div.appendChild(label);
     });
     container.appendChild(div);

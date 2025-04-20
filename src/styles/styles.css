@@ -93,6 +93,18 @@ button:hover {
   background-color: rgb(77, 255, 255);
 }
 
+.answer-label{
+  display: flex;
+}
+.answer-label div {
+  flex: 2;
+
+}
+.answer-label input {
+  flex: 1;
+}
+
+
 label {
   display: block;
   margin: 8px 0;
