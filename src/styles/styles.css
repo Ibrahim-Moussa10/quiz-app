@@ -3,7 +3,7 @@ body {
   background-image: radial-gradient(
     circle,
     rgb(255, 0, 111) 0%,
-    rgb(126, 186, 255) 100%
+    rgb(101, 157, 221) 100%
   );
   display: flex;
   justify-content: center;

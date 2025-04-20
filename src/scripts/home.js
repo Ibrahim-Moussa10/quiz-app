@@ -10,7 +10,7 @@ const username = isAdmin
   ? 'Admin'
   : users[loggedInEmail]?.username || loggedInEmail;
 
-document.getElementById('welcomeMessage').textContent = `Welcome, ${username}!`;
+document.getElementById('welcomeMessage').textContent = `Welcome!, ${username}`;
 
 const quizzes = JSON.parse(localStorage.getItem('quizzes') || '[]');
 const quizList = document.getElementById('quizList');

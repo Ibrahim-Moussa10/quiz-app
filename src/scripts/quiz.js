@@ -2,11 +2,6 @@ const params = new URLSearchParams(window.location.search);
 const quizId = parseInt(params.get('id'));
 const quizzes = JSON.parse(localStorage.getItem('quizzes') || '[]');
 const quiz = quizzes.find((q) => q.id === quizId);
-const loggedInEmail = localStorage.getItem('loggedInUser');
-
-if (!loggedInEmail) {
-  window.location.href = 'index.html';
-}
 
 if (!quiz) {
   document.getElementById('quizTitle').textContent = 'Quiz not found!';
