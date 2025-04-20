@@ -39,7 +39,7 @@ function handleLogin(event) {
 
   if (email === adminEmail && password === adminPassword) {
     localStorage.setItem('loggedInUser', email);
-    window.location.href = 'dashboard.html';
+    window.location.href = './pages/dashboard.html';
     return;
   }
 
