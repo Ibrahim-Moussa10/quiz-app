@@ -8,8 +8,8 @@
   <body>
     <div class="tab-container">
       <div class="tabs">
-        <div class="tab active" onclick="switchTab('login')">Login</div>
-        <div class="tab" onclick="switchTab('register')">Register</div>
+        <div class="tab active" onclick="switchTab('login', event)">Login</div>
+        <div class="tab" onclick="switchTab('register', event)">Register</div>
       </div>
 
       <div id="login" class="form-container active">
@@ -47,6 +47,6 @@
       </div>
     </div>
 
-    <script src="./scripts/auth.js"></script>
+    <script src="scripts/auth.js"></script>
   </body>
 </html>

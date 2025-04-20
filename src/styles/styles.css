@@ -1,6 +1,10 @@
 body {
   font-family: Arial, sans-serif;
-  background: whitesmoke;
+  background-image: radial-gradient(
+    circle,
+    rgb(255, 0, 111) 0%,
+    rgb(126, 186, 255) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
