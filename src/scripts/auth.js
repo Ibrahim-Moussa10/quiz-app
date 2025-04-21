@@ -40,16 +40,39 @@ function switchTab(tabId, event) {
 
 function handleRegister(event) {
   event.preventDefault();
+
   const username = document.getElementById('registerUsername').value;
   const email = document
     .getElementById('registerEmail')
     .value.trim()
     .toLowerCase();
   const password = document.getElementById('registerPassword').value;
-
+  if (username.length < 3) {
+    showMessage(
+      'registerMessage',
+      'Username must be at least 3 characters long.',
+      'error'
+    );
+    return;
+  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showMessage(
+      'registerMessage',
+      'Please enter a valid email address.',
+      'error'
+    );
+    return;
+  }
+  if (password.length < 3) {
+    showMessage(
+      'registerMessage',
+      'Password must be at least 3 characters long.',
+      'error'
+    );
+    return;
+  }
   const users = JSON.parse(localStorage.getItem('users') || '[]');
-
-  console.log('Registered Users:', users);
 
   if (users.find((user) => user.email === email)) {
     showMessage('registerMessage', 'Email already registered.', 'error');
